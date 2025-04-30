@@ -1,0 +1,28 @@
+export const loginReducer = (state, { type, payload }) => {
+  switch (type) {
+    case "EMAIL":
+      return {
+        ...state,
+        email: payload.value,
+      }
+    case "PASSWORD":
+      return {
+        ...state,
+        password: payload.value,
+      }
+    case "TOKEN":
+      return {
+        ...state,
+        accessToken: payload.token,
+      }
+    case "LOGOUT":
+        return{
+            ...state,
+            email:"",
+            passowrd:"",
+            accessToken:""
+        }
+    default:
+      return state;
+  }
+};
